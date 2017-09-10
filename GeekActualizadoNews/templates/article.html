@@ -2,9 +2,10 @@
 
 {% block articles %}
     {% if articles %}
+    <div class="row">
         {% for article in  articles %}
             <!-- Post -->
-            <article class="post">
+            <article class="post 6u 12u$(medium)">
                 <header>
                     <div class="title">
                         <h2><a href="{{ article.href }}">{{ article.title }}</a></h2>                        
@@ -23,6 +24,7 @@
                 </footer>
             </article>	
         {% endfor %}
+    </div>
     {% elif error %}
         <h3 class="center">404 Not Found</h3>
     {% else %}
