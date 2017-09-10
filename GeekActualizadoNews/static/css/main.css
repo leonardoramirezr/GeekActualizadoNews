@@ -2761,7 +2761,8 @@
 
 						.post > header .meta > :first-child {
 							border-left: 0;
-							margin-left: 0;
+							margin-left: 5em;
+							margin-right: 0em;
 							padding-left: 0;
 						}
 
