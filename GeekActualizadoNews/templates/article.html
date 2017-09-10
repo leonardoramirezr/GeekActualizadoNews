@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block articles %}
+    {% if articles %}
+        {% for article in  articles %}
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="{{ article.href }}">{{ article.title }}</a></h2>                        
+                    </div>
+                    <div class="meta">
+                        <time class="published">{{ article.time }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</time>
+                        <a href="#" class="author"><span class="name">{{ article.autor}}</span><img src="{{ article.page }}" alt="" /></a>
+                    </div>
+                </header>
+                <a href="{{ article.href }}" class="image featured"><img src="{{ article.img }}" alt="" /></a>
+                <p>{{ article.res }}</p>
+                <footer>
+                    <ul class="actions">
+                        <li><a href="{{ article.href }}" class="button big">Continue Reading</a></li>
+                    </ul>
+                </footer>
+            </article>	
+        {% endfor %}
+    {% elif error %}
+        <h3 class="center">404 Not Found</h3>
+    {% else %}
+        <h3 class="center">No hay articulos.</h3>
+    {% endif %}
+{% endblock %}
