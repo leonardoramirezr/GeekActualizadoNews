@@ -27,7 +27,8 @@ def Medium():
                 dic_Story['res'] = div.find('h4').string
                 dic_Story['time'] = div.find('time').string
                 dic_Story['autor'] = div.find('a',attrs={'class':'link u-textColorDarker u-fontSize12 u-baseColor--link'}).string                
-                dic_Story['page'] = "https://cdn.app.compendium.com/uploads/user/e7c690e8-6ff9-102a-ac6d-e4aebca50425/0eb8e772-8880-46b2-98ee-257cf9c2fa2c/File/d3a660af8932f6bd201f17bc6ce993c5/gjbzh1ue.jpg"
+                dic_Story['img_page'] = "https://cdn.app.compendium.com/uploads/user/e7c690e8-6ff9-102a-ac6d-e4aebca50425/0eb8e772-8880-46b2-98ee-257cf9c2fa2c/File/d3a660af8932f6bd201f17bc6ce993c5/gjbzh1ue.jpg"
+                dic_Story['page'] = "https://medium.com/"
                 list_Top_Stories.append(dic_Story)                
     except:
             pass
@@ -46,10 +47,10 @@ def Xataka():
             print(div)
             dic_Story = {} 
             dic_Story['href'] = "https://www.xataka.com/"+div.find('a')['href']                        
-            
             dic_Story['title'] = div.find('div',attrs={'class':'poster-figure'}).find('img')['alt']
             dic_Story['img'] = div.find('div',attrs={'class':'poster-figure'}).find('img')['src']
-            dic_Story['page'] = "https://www.gravatar.com/avatar/46c418f19105a71eb554a1aa6835ee43?s=300&d=mm&r=g"            
+            dic_Story['img_page'] = "https://www.gravatar.com/avatar/46c418f19105a71eb554a1aa6835ee43?s=300&d=mm&r=g"            
+            dic_Story['page'] = "https://xataka.com/"
             try:
                 dic_Story['res'] = div.find('div',attrs={'class':'poster-summary'}).find('p').string        
             except:
